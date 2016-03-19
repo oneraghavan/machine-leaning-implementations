@@ -1,11 +1,10 @@
 import unittest
 import numpy as np
-from simplelinearregression.simple_linear_regression import SimpleSingleVariableLinearRegression
-
-__author__ = 'raghavan'
+from simplelinearregression.simple_single_variable_linear_regression import SimpleSingleVariableLinearRegression
 
 
-class TestSimpleSingleVariableLinearRegression(unittest.TestCase):
+
+class TestSimpleSingleFeatureLinearRegression(unittest.TestCase):
     def test_should_raise_exception_when_input_feature_size_not_equal_output_size(self):
         input_feature = np.array([1, 2, 3])
         output = np.array([1, 2, 3, 4])
@@ -26,7 +25,6 @@ class TestSimpleSingleVariableLinearRegression(unittest.TestCase):
         expected = np.array([9, 11, 13])
 
         np.testing.assert_almost_equal(actual_predictions, expected, 2)
-
 
 if __name__ == '__main__':
     unittest.main()
