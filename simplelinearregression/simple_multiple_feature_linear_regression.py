@@ -5,7 +5,7 @@ import numpy as np
 class SimpleMultipleFeatureLinearRegression:
     def __init__(self):
         self.weights = None
-        self.step_size = 0.01
+        self.step_size = 1e-10
         self.tolerance = 0.001
         self.iterations = None
 
@@ -28,12 +28,15 @@ class SimpleMultipleFeatureLinearRegression:
                 self.weights[i] = self.weights[i] - self.step_size * derivative
 
             gradient_magnitude = sqrt(gradient_sum_squares)
+            print self.weights
+            print gradient_magnitude
             if gradient_magnitude < self.tolerance:
                 converged = True
         self.iterations = iterations
 
     def predit(self, features_predict):
         features_predict = self.preprocess(features_predict)
+        print self.weights
         predictions = np.dot(features_predict,self.weights)
         return predictions
 
@@ -42,7 +45,7 @@ class SimpleMultipleFeatureLinearRegression:
         return (derivative)
 
     def validate(self, input_feature, output):
-        if input_feature[0].size != output.size:
+        if len(input_feature) != len(output):
             raise Exception("input feature should be of same lenth as output")
 
     def preprocess(self, input_feature):
