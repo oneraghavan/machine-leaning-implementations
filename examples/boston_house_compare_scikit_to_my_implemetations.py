@@ -17,6 +17,7 @@ X_test = np.array(boston.data[401:])
 Y_test = np.array(boston.target[401:])
 
 my_linear_model.tolerance = 3000
+my_linear_model.step_size = 1e-10
 my_linear_model.fit(X_train,Y_train)
 sci_kit_model.fit(X_train,Y_train)
 predicted_my_model = my_linear_model.predit(X_test)

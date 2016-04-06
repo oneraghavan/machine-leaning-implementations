@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.pylab import rcParams
-
+from simplelinearregression.simple_multiple_feature_linear_regression import SimpleMultipleFeatureLinearRegression
 from simplelinearregression.simple_ridge_regression import RidgeRegression
 
 
@@ -31,22 +31,13 @@ class TestSimpleSingleFeatureLinearRegression(unittest.TestCase):
         # alpha_ridge = [1e-15, 1e-10, 1e-8, 1e-4, 1e-3,1e-2, 1, 5, 10, 20]
         alpha_ridge = [1e-15, 1e-10, 1e25]
 
-        for i in alpha_ridge:
-            simple_model= None
-            simple_model = RidgeRegression()
-            simple_model.l2_penalty = i
-            simple_model.max_iterations = 100000
-            print "================"
-            print simple_model.l2_penalty
-            print "================"
-            simple_model.fit(final_X, y)
-            print "================"
-            print simple_model.weights
-            print "================"
-        # actual_predictions = simple_model.predit(np.array([self.create_polynomial_features([4, 1, 4],[3,5,9])]))
-        # expected = np.array([14])
-
-        # np.testing.assert_almost_equal(actual_predictions, expected, 2)
+        # for i in alpha_ridge:
+        simple_model= None
+        simple_model = RidgeRegression()
+        simple_model.l2_penalty = 1e0
+        simple_model.step_size = 1.32409e-22
+        print simple_model.iterations
+        simple_model.fit(final_X, y)
 
     def create_polynomial_features(self,observation,raise_to_power):
         polynomial_observation = []

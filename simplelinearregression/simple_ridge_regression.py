@@ -21,11 +21,7 @@ class RidgeRegression:
 
         converged = False
         iterations = 0
-        while (not converged) and (iterations < self.max_iterations):
-        # while not converged:
-        #     print "======================="
-        #     print "weights" , self.weights
-        #     print "======================="
+        while (not converged) :
             gradient_sum_squares = 0
             iterations += 1
             predictions = np.dot(input_feature, self.weights)
@@ -36,14 +32,11 @@ class RidgeRegression:
                 else:
                     derivative = self.feature_derivative(errors, input_feature[:, i],self.weights[i],False)
                 gradient_sum_squares = gradient_sum_squares + (derivative * derivative)
-                # print "decent"
-                # print self.step_size * derivative
-                # print "decent"
                 self.weights[i] = self.weights[i] - self.step_size * derivative
 
             gradient_magnitude = sqrt(gradient_sum_squares)
-            # print self.weights
-            # print "gradient_magnitude",gradient_magnitude
+            print self.weights
+            print "gradient_magnitude",gradient_magnitude
             # print "======================="
             # print "derivative",derivative
             # print "======================="
