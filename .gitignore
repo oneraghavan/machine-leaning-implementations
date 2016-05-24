@@ -110,3 +110,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+.DS_Store
+/data_analysis/.DS_Store
