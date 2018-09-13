@@ -1,7 +1,7 @@
 import unittest
 
 import numpy as np
-from implementations.simplelinearregression import RidgeRegression
+from implementations.supervised_learning.simplelinearregression import RidgeRegression
 
 
 class TestSimpleSingleFeatureLinearRegression(unittest.TestCase):

@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from implementations.simplelinearregression import SimpleSingleVariableLinearRegression
+from implementations.supervised_learning.simplelinearregression import SimpleSingleVariableLinearRegression
 
 
 

@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from implementations.simplelinearregression import SimpleMultipleFeatureLinearRegression
+from implementations.supervised_learning.simplelinearregression import SimpleMultipleFeatureLinearRegression
 
 
 class TestSimpleSingleFeatureLinearRegression(unittest.TestCase):

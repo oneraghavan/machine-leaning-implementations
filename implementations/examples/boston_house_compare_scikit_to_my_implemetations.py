@@ -2,7 +2,7 @@ from sklearn import datasets
 from sklearn import linear_model
 import numpy as np
 import matplotlib.pyplot as plt
-from implementations.simplelinearregression import SimpleMultipleFeatureLinearRegression
+from implementations.supervised_learning.simplelinearregression import SimpleMultipleFeatureLinearRegression
 
 my_linear_model = SimpleMultipleFeatureLinearRegression()
 sci_kit_model = linear_model.LinearRegression()
